@@ -15,6 +15,9 @@ export class User {
     PhoneNumber: number;
 
     @Column()
+    Email: string;
+
+    @Column()
     Adrress: String;
 
     @Column({ default: true })
