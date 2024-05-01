@@ -7,8 +7,16 @@ export class User {
 
     @Column()
     firstName: string;
+
     @Column()
     lastName: string;
+
+    @Column()
+    PhoneNumber: number;
+
+    @Column()
+    Adrress: String;
+
     @Column({ default: true })
     isActive: boolean;
 }
