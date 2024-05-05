@@ -9,15 +9,15 @@ import { create } from 'domain';
 @Injectable()
 export class UserService {
   constructor(  @InjectRepository(User)
-  private usersRepository: Repository<User>,
+  private userRepository: Repository<User>,
 ) {}
 
 create(CreateUserDto: CreateUserDto){
-  return 'This action adds a new user';
+  return this.userRepository.save(CreateUserDto);
 }
 
   findAll() {
-    return this.usersRepository.find();
+    return this.userRepository.find();
   }
 
   findOne(id: number) {
