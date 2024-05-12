@@ -13,7 +13,7 @@ export class Task {
     task_status_id: string;
 
     @Column()
-    user_id: number;
+    user_id: number; 
 
     @Column({ default: true })
     isActive: boolean;
