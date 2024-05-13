@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Task } from "src/task/entities/task.entity";
+import { Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 
 @Entity()
@@ -7,4 +8,7 @@ import { Entity, PrimaryGeneratedColumn } from "typeorm";
 export class TaskStatus {
     @PrimaryGeneratedColumn()
     id: number;
+
+    @OneToMany(() => Task, task => task.status) 
+    tasks: Task[];
 }
