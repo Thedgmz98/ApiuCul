@@ -8,6 +8,8 @@ import { TaskModule } from './task/task.module';
 import { Task } from './task/entities/task.entity';
 import { TaskcategoriesModule } from './taskcategories/taskcategories.module';
 import {Taskcategory} from './taskcategories/entities/taskcategory.entity';
+import { TaskStatusModule } from './task_status/task_status.module';
+import { TaskStatus } from './task_status/entities/task_status.entity';
 @Module({
   imports: [TypeOrmModule.forRoot({
     type: 'mysql',
@@ -16,9 +18,9 @@ import {Taskcategory} from './taskcategories/entities/taskcategory.entity';
     username: 'root',
     password: '',
     database: 'apicul',
-    entities: [User, Task,Taskcategory],
+    entities: [User, Task,Taskcategory, TaskStatus],
     synchronize: true,
-  }), UserModule, TaskModule, TaskcategoriesModule],
+  }), UserModule, TaskModule, TaskcategoriesModule, TaskStatusModule],
   controllers: [AppController],
   providers: [AppService],
 
