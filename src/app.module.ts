@@ -6,7 +6,8 @@ import { UserModule } from './user/user.module';
 import { User } from './user/entities/user.entity';
 import { TaskModule } from './task/task.module';
 import { Task } from './task/entities/task.entity';
-
+import { TaskcategoriesModule } from './taskcategories/taskcategories.module';
+import {Taskcategory} from './taskcategories/entities/taskcategory.entity';
 @Module({
   imports: [TypeOrmModule.forRoot({
     type: 'mysql',
@@ -15,9 +16,9 @@ import { Task } from './task/entities/task.entity';
     username: 'root',
     password: '',
     database: 'apicul',
-    entities: [User, Task],
+    entities: [User, Task,Taskcategory],
     synchronize: true,
-  }), UserModule, TaskModule],
+  }), UserModule, TaskModule, TaskcategoriesModule],
   controllers: [AppController],
   providers: [AppService],
 
